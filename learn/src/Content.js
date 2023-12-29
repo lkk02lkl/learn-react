@@ -40,19 +40,18 @@ const Content = () => {
             <li className="item" key={item.id}>
               <input 
                 type="checkbox" 
+                id={`checkbox-${item.id}`} 
                 onChange={() => handleCheck(item.id)} 
-                checked={item.checked} 
-              />
+                checked={item.checked}
+               />
               <label 
+                htmlFor={`checkbox-${item.id}`} 
                 style={item.checked ? { textDecoration: "line-through" } : null} 
                 onDoubleClick={() => handleCheck(item.id)}
               >
-                {item.item}</label>
-              <FaTrashAlt 
-                onClick={() => handleDelete(item.id)} 
-                role="button" 
-                tabIndex="0" 
-              />
+                {item.item}
+              </label>
+              <FaTrashAlt onClick={() => handleDelete(item.id)} role="button" tabIndex="0" />
             </li>
           ))}
         </ul>
