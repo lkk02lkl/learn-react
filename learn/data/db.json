@@ -12,7 +12,11 @@
     },
     {
       "id": 3,
-      "checked": false,
+      "checked": {
+        "id": 3,
+        "checked": true,
+        "item": "Bread"
+      },
       "item": "Bread"
     }
   ]
