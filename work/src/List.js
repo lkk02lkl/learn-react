@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import ListItem from './ListItem';
 
-const List = () => {
+const List = ({ items }) => {
   return (
-    <div>List</div>
+    <ul>
+      {items.map(item => (
+        <ListItem key={item.id} item={item} />
+      ))}
+    </ul>
   )
 }
 
