@@ -9,15 +9,6 @@
       "id": 2,
       "checked": false,
       "item": "Pizza"
-    },
-    {
-      "id": 3,
-      "checked": {
-        "id": 3,
-        "checked": true,
-        "item": "Bread"
-      },
-      "item": "Bread"
     }
   ]
 }
