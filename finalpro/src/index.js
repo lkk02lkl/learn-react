@@ -9,7 +9,7 @@ root.render(
   <StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="*" element={<App />} />
       </Routes>
     </Router>
   </StrictMode>,
