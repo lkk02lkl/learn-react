@@ -193,6 +193,7 @@ body {
 
 .newPostForm textarea {
   height: 100px;
+  resize: none;
 }
 
 .newPostForm button {

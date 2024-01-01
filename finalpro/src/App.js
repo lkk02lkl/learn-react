@@ -9,6 +9,7 @@ import Missing from "./Missing";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { format } from 'date-fns';
+import api from './api/posts';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -17,6 +18,28 @@ function App() {
   const [postTitle, setPostTitle] = useState('');
   const [postBody, setPostBody] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await api.get("/posts");
+        setPosts(response.data);
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(`Error: ${err.message}`);
+        }
+      }
+    } 
+
+    fetchPost();
+
+  },[]);
+
+
 
   useEffect(() => {
     const filteredResults = posts.filter((post) => 
@@ -60,7 +83,7 @@ function App() {
         <Route path="/post/:id" element={<PostPage posts={posts} handleDelete={handleDelete} />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Missing />} />
-      </Routes>
+      </Routes> 
       <Footer />
     </div>
   );
