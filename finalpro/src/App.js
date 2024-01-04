@@ -7,11 +7,19 @@ import PostPage from "./PostPage";
 import EditPost from "./EditPost";
 import About from "./About";
 import Missing from "./Missing";
+import { useEffect } from "react";
+import useAxiosFetch from "./hooks/useAxiosFetch";
 import { Route, Routes } from "react-router-dom";
 
 
 
 function App() {
+  const { data, fetchError, isLoading } = useAxiosFetch("http://localhost:3500/posts");
+
+  useEffect(() => {
+    setPosts(data);
+  }, [data]);
+
   return (
     <div className="App">
       <Header title="React Js Blog" />
