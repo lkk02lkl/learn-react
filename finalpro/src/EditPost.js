@@ -29,7 +29,7 @@ const EditPost = () => {
         const datetime = format(new Date(), 'MMMM dd, yyyy pp');
         const updatedPost = { id, title: editTitle, datetime, body: editBody };
         editPost(updatedPost);
-        navigate('/post/${id}')
+        navigate(`/post/${id}`)
     }
 
     return (
