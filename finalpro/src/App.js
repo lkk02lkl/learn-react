@@ -8,14 +8,14 @@ import EditPost from "./EditPost";
 import About from "./About";
 import Missing from "./Missing";
 import { Route, Routes } from "react-router-dom";
-import { DataProvider } from "./context/DataContext";
+
 
 
 function App() {
   return (
     <div className="App">
       <Header title="React Js Blog" />
-      <DataProvider>
+    
         <Nav />
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Missing />} />
         </Routes>
-      </DataProvider>
+      
       <Footer />
     </div>
   );
